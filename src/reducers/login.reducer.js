@@ -7,12 +7,11 @@ function authReducer(state = {}, action){
                 ...state,
                 user: action.payload
             };
-            console.log(newUserState);
             return newUserState;
         case LOGOUT_USER:
             const updatedState = {
                 ...state,
-                user: null
+                user: action.payload
             };
             return updatedState;
         default:

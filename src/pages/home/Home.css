@@ -1,4 +1,29 @@
 .home{
-    padding: 120px 0;
-    background: #efefef;
+    padding: 40px 0 120px;
+    background: #fff;
+}
+
+.logout-bttn{
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.name-placeholder{
+    font-size: 27px;
+    font-weight: 600;
+}
+
+.email-placeholder{
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.certificate-holder{
+    box-shadow: 4px 9px 12px 5px #ddd;
+}
+
+.verify-certificate-placeholder a, .verify-certificate-placeholder a:hover, .verify-certificate-placeholder a:focus, .verify-certificate-placeholder a:visited{
+    font-size: 300;
+    text-decoration: none!important;
+    font-size: 20px;
 }

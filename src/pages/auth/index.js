@@ -17,6 +17,7 @@ class AuthHandler extends Component {
                 name: user.displayName,
                 email: user.email,
                 isVerified: user.emailVerified,
+                uid: user.uid,
                 photo: user.photoURL
             };
             this.props.loginUser(userDetails);

@@ -4,24 +4,19 @@ import { connect } from "react-redux";
 import Auth from "../pages/auth";
 import Home from "../pages/home";
 
-class RouteHandler extends Component {
-
-    componentDidMount(){
-        console.log(this.props);
-    }
-
-    render(){
-        if(this.props.isUserLoggedIn === true){
-            return <Home />;
-        } else {
-            return <Auth />;
-        }
+function RouteHandler(props){
+    console.log("Route Handler Props", props);
+    if(props.isUserLoggedIn === true){
+        return <Home />;
+    } else {
+        return <Auth />;
     }
 }
 
-const mapStateToProps = (userState) => {
+const mapStateToProps = (authReducer) => {
+    const userState = authReducer.authReducer;
     return {
-        isUserLoggedIn: userState.user === null,
+        isUserLoggedIn: typeof userState.user !== 'undefined',
         user: userState.user
     }
 }
