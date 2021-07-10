@@ -2,6 +2,8 @@ import { Component } from "react";
 import { connect } from "react-redux";
 import { toast } from "react-toastify";
 
+import history from "../../history";
+
 import { loginUser } from "../../actions/authHandler.action";
 import { firebaseHandler, googleAuthProvider } from "../../config/firebase";
 
@@ -11,7 +13,6 @@ class AuthHandler extends Component {
 
     handleGoogleLogin = () => {
         firebaseHandler.auth().signInWithPopup(googleAuthProvider).then((result) => {
-            const credential = result.credential;
             const user = result.user;
             const userDetails = {
                 name: user.displayName,
@@ -22,6 +23,7 @@ class AuthHandler extends Component {
             };
             this.props.loginUser(userDetails);
             toast("Sign in successful");
+            history.push("/profile");
         }).catch((error) => {
             toast.error("Uh oh, an error occurred");
             console.log(error);
@@ -34,7 +36,7 @@ class AuthHandler extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-8 col-md-offset-2 certificates-title text-center">
-                            <img src="https://res.cloudinary.com/startup-grind/image/upload/dpr_2.0,fl_sanitize/v1/gcs/platform-data-dsc/contentbuilder/logo_dark_horizontal_097s7oa.svg" className="img-responsive" />
+                            <img alt="Google Developer Student Clubs" src="https://res.cloudinary.com/startup-grind/image/upload/dpr_2.0,fl_sanitize/v1/gcs/platform-data-dsc/contentbuilder/logo_dark_horizontal_097s7oa.svg" className="img-responsive" />
                         </div>
                     </div>
                     <br />
@@ -54,7 +56,7 @@ class AuthHandler extends Component {
                         <div className="col-md-4 col-md-offset-4">
                             <center>
                                 <div className="login-bttn" onClick={this.handleGoogleLogin}>
-                                    <img className="img-responsive google-logo-img" height="24" width="24" src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-icon-png-transparent-background-osteopathy-16.png" /> Sign in with Google
+                                    <img alt="Google" className="img-responsive google-logo-img" height="24" width="24" src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-icon-png-transparent-background-osteopathy-16.png" /> Sign in with Google
                                 </div>
                             </center>
                         </div>

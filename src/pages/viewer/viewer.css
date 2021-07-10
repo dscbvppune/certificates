@@ -1,0 +1,19 @@
+.certificate-placeholder{
+    padding: 90px 0 140px;
+}
+
+.certificate-title{
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.certificate-issued-to{
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.certificate-issued-to a, .certificate-issued-to a:hover, .certificate-issued-to a:active, .certificate-issued-to a:visited{
+    font-size: 300;
+    text-decoration: none!important;
+    font-size: 18px;
+}
