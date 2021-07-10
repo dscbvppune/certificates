@@ -1,0 +1,32 @@
+.auth-screen{
+    padding: 120px 0;
+}
+
+.certificates-title{
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.certificates-subtitle{
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.certificates-heading{
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.google-logo-img{
+    margin-right: 9px;
+}
+
+.login-bttn{
+    flex-direction: row;
+    display: inline-flex;
+    padding: 12px 42px;
+    background: #fff;
+    cursor: pointer;
+    border: 2px solid #4285F4;
+    border-radius: 32px;
+}
